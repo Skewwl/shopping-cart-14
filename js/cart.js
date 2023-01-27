@@ -15,18 +15,28 @@ function renderCart() {
   loadCart();
   clearCart();
   showCart();
+  const element = document.querySelectorAll("#cart tbody tr");
+  console.log(element);
 }
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
+function clearCart() {
+  const element = document.querySelectorAll("#cart tbody tr");
+  console.log(element);
+}
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
   // TODO: Find the table body
-
+  let tbodyEl = document.querySelector('#cart tbody');
   // TODO: Iterate over the items in the cart
+  for (let i = 0; i < state.cart.length; i++) {
+    let trowEl = document.createElement('tr');
+    
+  }
   // TODO: Create a TR
+
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 

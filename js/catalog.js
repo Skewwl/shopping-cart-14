@@ -32,7 +32,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
-  preventDefault();
+  event.preventDefault();
   // Do all the things ...
   addSelectedItemToCart();
   state.cart.saveToLocalStorage();
@@ -54,19 +54,19 @@ function addSelectedItemToCart() {
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
-  let item = document.getElementById('item').value;
+  let item = document.getElementById('items').value;
   let quantity = document.getElementById('quantity').value;
   // TODO: Add a new element to the cartContents div with that information
-  // for(let cartItems of state.cart.item)
+  state.cart.addItem(item, quantity);
+  // console.log(item);
+  // let cartDivEl = document.getElementById('cartContents');
+  // item = document.createElement('p');
+  // pEl.textContent = 
+  // cartDivEl.appendChild(pEl);
   
 
-  console.log(item);
-  cartDivEl = document.getElementById('cartContents');
-  let pEl = createElement('p');
-  cartDivEl.appendChild(pEl);
-  pEl.innerHtml = item;
 
-  
+
 
 }
 
