@@ -19,11 +19,14 @@ Cart.prototype.addItem = function(product, quantity) {
 };
 
 
+
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
   let stringifiedItems = JSON.stringify(this.items);
+  console.log(`'local storage' ${stringifiedItems}`);
   localStorage.setItem('storedItems', stringifiedItems);
 };
+console.log(this.items);
 
 Cart.prototype.removeItem = function(key) {
   // TODO: Fill in this instance method to remove one item from the cart.
@@ -33,7 +36,7 @@ Cart.prototype.removeItem = function(key) {
 
 Cart.prototype.updateCounter = function() {
   // TODO: Update the cart count in the header nav with the number of items in the Cart
-  counterEl = document.getElementById('itemCount');
+  let counterEl = document.getElementById('itemCount');
   counterEl.innerHTML = this.items.length;
 }
 
@@ -73,3 +76,5 @@ function generateCatalog() {
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
+
+console.log(state.allProducts);
